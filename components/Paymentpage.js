@@ -86,7 +86,7 @@ const Paymentpage = () => {
     // Export functionality
     const exportData = (format) => {
         const successfulPayments = payments.filter(p => p.done);
-        
+
         if (format === 'csv') {
             const csvContent = [
                 ['Date', 'Name', 'Amount (₹)', 'Message', 'Transaction ID'],
@@ -98,7 +98,7 @@ const Paymentpage = () => {
                     p._id?.slice(-6) || 'N/A'
                 ])
             ].map(row => row.join(',')).join('\n');
-            
+
             const blob = new Blob([csvContent], { type: 'text/csv' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -107,7 +107,7 @@ const Paymentpage = () => {
             a.click();
             window.URL.revokeObjectURL(url);
         }
-        
+
         setShowExportModal(false);
     };
 
@@ -118,7 +118,7 @@ const Paymentpage = () => {
 
             const user = await fetchuser(username);
             setCurrentUser(user || {});
-            
+
             // Only fetch payments if user is the profile owner
             let dbPayments = [];
             if (session?.user && (session.user.username === Name || session.user.email === user?.email)) {
@@ -135,7 +135,7 @@ const Paymentpage = () => {
                 const totalEarnings = successfulPayments.reduce((sum, p) => sum + (p.amount || 0), 0);
                 const totalSupporters = successfulPayments.length;
                 const averageContribution = totalSupporters > 0 ? Math.round(totalEarnings / totalSupporters) : 0;
-                
+
                 // Calculate this month's earnings
                 const now = new Date();
                 const currentMonth = now.getMonth();
@@ -168,26 +168,26 @@ const Paymentpage = () => {
                     supporterMap[name].total += p.amount || 0;
                     supporterMap[name].count += 1;
                 });
-                
+
                 const topSupporter = Object.entries(supporterMap)
-                    .sort(([,a], [,b]) => b.total - a.total)[0];
+                    .sort(([, a], [, b]) => b.total - a.total)[0];
 
                 // Calculate current streak (consecutive days with payments)
                 const sortedByDate = successfulPayments
                     .filter(p => p.created_at)
                     .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-                
+
                 let currentStreak = 0;
                 let checkDate = new Date();
                 checkDate.setHours(0, 0, 0, 0);
-                
+
                 for (let i = 0; i < 30; i++) { // Check last 30 days
                     const hasPaymentThisDay = sortedByDate.some(p => {
                         const paymentDate = new Date(p.created_at);
                         paymentDate.setHours(0, 0, 0, 0);
                         return paymentDate.getTime() === checkDate.getTime();
                     });
-                    
+
                     if (hasPaymentThisDay) {
                         currentStreak++;
                         checkDate.setDate(checkDate.getDate() - 1);
@@ -361,7 +361,7 @@ const Paymentpage = () => {
                         </div>
 
                         <div className={`${isProfileOwner ? 'space-y-12' : 'grid lg:grid-cols-1 max-w-2xl mx-auto'}`}>
-                            
+
                             {/* Stats Dashboard - Only for profile owner */}
                             {isProfileOwner && (
                                 <div className="mb-12">
@@ -533,7 +533,7 @@ const Paymentpage = () => {
                                                     Amount
                                                 </label>
                                                 <div className="relative">
-                                                        <span className="absolute left-5 top-1/2 transform -translate-y-1/2 text-cyan-400 text-xl font-bold">₹</span>
+                                                    <span className="absolute left-5 top-1/2 transform -translate-y-1/2 text-cyan-400 text-xl font-bold">₹</span>
                                                     <input
                                                         type="number"
                                                         value={paymentform.amount}
@@ -688,10 +688,11 @@ const Paymentpage = () => {
                                                             <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full"></div>
                                                             <div className="pl-4 h-full flex flex-col">
                                                                 <p className="text-gray-300 text-sm leading-relaxed italic flex-1 overflow-hidden">
-                                                                    "{payment.message && payment.message.length > 80 
-                                                                        ? `${payment.message.substring(0, 80)}...` 
-                                                                        : payment.message || "Thank you for your amazing work!"}"
+                                                                    {payment.message && payment.message.length > 80
+                                                                        ? `${payment.message.substring(0, 80)}...`
+                                                                        : payment.message || "Thank you for your amazing work!"}
                                                                 </p>
+
                                                                 {payment.message && payment.message.length > 80 && (
                                                                     <button className="text-cyan-400 text-xs mt-2 hover:text-cyan-300 transition-colors self-start">
                                                                         Read more →
@@ -755,7 +756,7 @@ const Paymentpage = () => {
                                                 <div className="text-2xl mb-2">⭐</div>
                                                 <p className="text-xs text-gray-400 uppercase tracking-wider mb-2">Response Rate</p>
                                                 <p className="text-2xl font-bold text-yellow-400">
-                                                    {payments.filter(p => p.done && p.message && p.message.trim().length > 10).length > 0 
+                                                    {payments.filter(p => p.done && p.message && p.message.trim().length > 10).length > 0
                                                         ? Math.round((payments.filter(p => p.done && p.message && p.message.trim().length > 10).length / payments.filter(p => p.done).length) * 100)
                                                         : 0}%
                                                 </p>
@@ -775,7 +776,7 @@ const Paymentpage = () => {
                                             <h3 className="text-2xl font-bold text-white mb-2">Export Support Data</h3>
                                             <p className="text-gray-400">Download your support history for records</p>
                                         </div>
-                                        
+
                                         <div className="space-y-4">
                                             <button
                                                 onClick={() => exportData('csv')}
@@ -785,7 +786,7 @@ const Paymentpage = () => {
                                                 Export as CSV
                                                 <span className="text-sm opacity-75">(Excel compatible)</span>
                                             </button>
-                                            
+
                                             <div className="text-center">
                                                 <button
                                                     onClick={() => setShowExportModal(false)}
@@ -907,7 +908,7 @@ const Paymentpage = () => {
                                             Support {Name}
                                         </h3>
                                         <p className="text-gray-400 max-w-md">
-                                            Your contribution will help {Name} continue their amazing work. 
+                                            Your contribution will help {Name} continue their amazing work.
                                             Fill out the form to show your support!
                                         </p>
                                     </div>

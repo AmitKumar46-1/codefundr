@@ -58,7 +58,7 @@ const NotFoundPage = ({ username = "example_user" }) => {
                 User <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-mono bg-black/50 px-3 py-1 rounded-md border border-cyan-500/20">"{username}"</span> not found
               </p>
               <p className="text-gray-300 text-base max-w-md mx-auto">
-                The requested profile doesn't exist or has been removed from our system.
+                The requested profile does not exist or has been removed from our system.
               </p>
             </div>
 

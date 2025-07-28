@@ -20,7 +20,7 @@ export default function Username() {
     const searchParams = useSearchParams();
 
     const { username } = useParams();
-    
+
 
     const [scrolled, setScrolled] = useState(false);
     const [user, setUser] = useState({});
@@ -222,7 +222,7 @@ export default function Username() {
 
                                 {/* Name and Title */}
                                 <h1 className="text-5xl lg:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 mb-4 drop-shadow-lg">
-                                   {user.name}
+                                    {user.name}
                                 </h1>
                                 <p className="text-gray-300 text-xl lg:text-2xl mb-8 font-light">
                                     Full-Stack Developer & Code Architect
@@ -343,8 +343,9 @@ export default function Username() {
                                         Ready to Build Something Amazing?
                                     </h3>
                                     <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-                                        Let's collaborate and turn your vision into a digital masterpiece that stands out from the crowd.
+                                        Let&apos;s collaborate and turn your vision into a digital masterpiece that stands out from the crowd.
                                     </p>
+
 
                                     <Link
                                         href={`/${username}/payment`}
@@ -368,9 +369,7 @@ export default function Username() {
                                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                         <div className="space-y-8 text-lg lg:text-xl leading-relaxed">
                                             <p className="text-gray-300">
-                                                Passionate about transforming ideas into reality through elegant code. With expertise spanning
-                                                from intuitive frontend interfaces to robust backend architectures, I create digital solutions
-                                                that make a difference in people's lives.
+                                                {"Passionate about transforming ideas into reality through elegant code. With expertise spanning from intuitive frontend interfaces to robust backend architectures, I create digital solutions that make a difference in people's lives."}
                                             </p>
 
                                             <p className="text-gray-300">
@@ -381,9 +380,9 @@ export default function Username() {
                                             </p>
 
                                             <p className="text-gray-300">
-                                                When not coding, you'll find me exploring the latest tech trends, contributing to open-source projects,
-                                                and mentoring the next generation of developers.
+                                                Beyond coding, I enjoy building cool side projects, reading sci-fi, and helping other devs grow in the community.
                                             </p>
+
                                         </div>
 
                                         <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 rounded-2xl p-8 border border-cyan-500/20">
@@ -410,11 +409,12 @@ export default function Username() {
                                     </div>
 
                                     <blockquote className="relative mt-12 p-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 rounded-2xl border-l-4 border-cyan-400">
-                                        <div className="absolute -left-2 -top-2 text-6xl text-cyan-500/30">"</div>
+                                        <div className="absolute -left-2 -top-2 text-6xl text-cyan-500/30">&quot;</div>
                                         <p className="italic text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 text-xl lg:text-2xl font-medium pl-8">
-                                            Code is poetry written in logic, and every bug is just a plot twist waiting to be resolved.
+                                            {"Code is poetry written in logic, and every bug is just a plot twist waiting to be resolved."}
                                         </p>
                                     </blockquote>
+
                                 </div>
                             </div>
                         )}
@@ -582,7 +582,7 @@ export default function Username() {
                                     </h4>
                                     <p className="text-gray-400 leading-relaxed">
                                         Crafting digital experiences with passion, precision, and purpose.
-                                        Let's build something extraordinary together.
+                                        Let&apos;s build something extraordinary together.
                                     </p>
                                 </div>
 
