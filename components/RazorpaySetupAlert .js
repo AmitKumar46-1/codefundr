@@ -33,7 +33,7 @@ const RazorpaySetupAlert = ({ isOpen, onClose, onGoToDashboard, userName }) => {
                     <div className="flex items-start gap-3">
                         <CreditCard className="text-cyan-400 mt-0.5" size={20} />
                         <div>
-                            <h4 className="text-cyan-300 font-semibold mb-1">What's needed:</h4>
+                            <h4 className="text-cyan-300 font-semibold mb-1">What&apos;s needed:</h4>
                             <ul className="text-sm text-gray-400 space-y-1">
                                 <li>• Razorpay API Key ID</li>
                                 <li>• Razorpay API Secret Key</li>

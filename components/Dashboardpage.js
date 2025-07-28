@@ -55,7 +55,7 @@ export default function Dashboard() {
     } else {
       getData();
     }
-  }, [session]);
+  }, [session,getData, router]);
 
   /**
    * Fetches user data from the server
