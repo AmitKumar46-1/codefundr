@@ -22,7 +22,7 @@ import { Bounce } from 'react-toastify';
  * - Authentication and session management
  * - Image optimization and error handling
  */
-export default function Dashboard() {
+export default function Dashboardpage() {
   // Authentication and navigation hooks
   const { data: session, status } = useSession({
  
@@ -55,7 +55,7 @@ export default function Dashboard() {
     } else {
       getData();
     }
-  }, [session,getData, router]);
+  }, [session, router]);
 
   /**
    * Fetches user data from the server
