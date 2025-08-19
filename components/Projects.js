@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -413,7 +414,7 @@ export default function Projects() {
                 </div>
                 
                 <p className="text-cyan-300/80 text-sm text-center italic">
-                  "{story.story}"
+                  &quot;{story.story}&quot;
                 </p>
               </div>
             ))}
@@ -428,22 +429,22 @@ export default function Projects() {
             Have an Amazing <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600">Project Idea</span>?
           </h2>
           <p className="text-xl text-cyan-300 mb-8" data-aos="fade-up" data-aos-delay="200">
-            Join thousands of creators who've turned their dreams into reality with community support
+            Join thousands of creators who&apos;ve turned their dreams into reality with community support
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
-            <a 
+            <Link 
               href="/login" 
               className="px-8 py-4 rounded-full font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-700 text-white shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:brightness-110 transition-all hover:scale-105"
             >
               Start Your Project
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/about" 
               className="px-8 py-4 rounded-full font-bold border-2 border-cyan-500 text-cyan-300 hover:bg-cyan-500 hover:text-black transition-all hover:scale-105"
             >
               Learn How It Works
-            </a>
+            </Link>
           </div>
           
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center" data-aos="fade-up" data-aos-delay="600">

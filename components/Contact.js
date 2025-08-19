@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -59,7 +60,7 @@ export default function Contact() {
             data-aos="fade-up" 
             data-aos-delay="200"
           >
-            Have questions? We're here to help you succeed on your creative journey
+            Have questions? We&apos;re here to help you succeed on your creative journey
           </p>
         </div>
       </section>
@@ -70,7 +71,7 @@ export default function Contact() {
           <div data-aos="fade-right">
             <div className="bg-[#1a1a2e] border border-cyan-700/30 rounded-2xl p-8 shadow-[0_0_30px_rgba(0,255,255,0.1)]">
               <h2 className="text-3xl font-bold text-white mb-2">Send us a Message</h2>
-              <p className="text-cyan-300/80 mb-8">We'll get back to you within 24 hours</p>
+              <p className="text-cyan-300/80 mb-8">We&apos;ll get back to you within 24 hours</p>
               
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
@@ -78,7 +79,7 @@ export default function Contact() {
                     <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Message sent successfully! We'll get back to you soon.
+                    Message sent successfully! We&apos;ll get back to you soon.
                   </p>
                 </div>
               )}
@@ -185,106 +186,91 @@ export default function Contact() {
                   <div>
                     <h4 className="text-white font-semibold mb-1">Email Support</h4>
                     <p className="text-cyan-300">support@codefundr.com</p>
-                    <p className="text-cyan-400/70 text-sm">24-48 hour response time</p>
+                    <p className="text-cyan-300/70 text-sm">Response within 24 hours</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(147,51,234,0.3)]">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m2-4h4a2 2 0 012 2v4a2 2 0 01-2 2h-4m0-6v6" />
                     </svg>
                   </div>
                   <div>
                     <h4 className="text-white font-semibold mb-1">Live Chat</h4>
-                    <p className="text-cyan-300">Available 9 AM - 6 PM IST</p>
-                    <p className="text-cyan-400/70 text-sm">Mon-Fri support</p>
+                    <p className="text-cyan-300">Available 24/7</p>
+                    <p className="text-cyan-300/70 text-sm">Instant support for quick questions</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.3)]">
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold mb-1">Help Center</h4>
-                    <p className="text-cyan-300">Self-service resources</p>
-                    <p className="text-cyan-400/70 text-sm">FAQs, guides & tutorials</p>
+                    <h4 className="text-white font-semibold mb-1">Documentation</h4>
+                    <p className="text-cyan-300">Comprehensive guides</p>
+                    <p className="text-cyan-300/70 text-sm">Self-service help center</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Quick FAQ */}
+            {/* FAQ Section */}
             <div className="bg-[#1a1a2e] border border-cyan-700/30 rounded-2xl p-8 shadow-[0_0_30px_rgba(0,255,255,0.1)]">
-              <h3 className="text-2xl font-bold text-white mb-6">Quick Answers</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h3>
               
               <div className="space-y-4">
-                {[
-                  {
-                    question: "How do I get started?",
-                    answer: "Simply sign up, complete your profile, and start receiving support from your community!"
-                  },
-                  {
-                    question: "What fees do you charge?",
-                    answer: "We charge a small 3% platform fee + payment processing fees to keep the lights on."
-                  },
-                  {
-                    question: "When do I receive payments?",
-                    answer: "Payments are processed instantly and transferred to your account within 2-3 business days."
-                  },
-                  {
-                    question: "Is my data secure?",
-                    answer: "Absolutely! We use bank-level encryption and never store sensitive payment information."
-                  }
-                ].map((faq, index) => (
-                  <div key={index} className="border-b border-cyan-700/20 pb-4 last:border-b-0">
-                    <h4 className="text-white font-semibold mb-2">{faq.question}</h4>
-                    <p className="text-cyan-300/80 text-sm">{faq.answer}</p>
-                  </div>
-                ))}
+                <div className="border-b border-cyan-700/30 pb-4">
+                  <h4 className="text-white font-semibold mb-2">How quickly will you respond?</h4>
+                  <p className="text-cyan-300/80 text-sm">We typically respond to all inquiries within 24 hours during business days.</p>
+                </div>
+                
+                <div className="border-b border-cyan-700/30 pb-4">
+                  <h4 className="text-white font-semibold mb-2">Do you offer technical support?</h4>
+                  <p className="text-cyan-300/80 text-sm">Yes! Our team provides comprehensive technical support for all platform features.</p>
+                </div>
+                
+                <div className="border-b border-cyan-700/30 pb-4">
+                  <h4 className="text-white font-semibold mb-2">Can I schedule a demo?</h4>
+                  <p className="text-cyan-300/80 text-sm">Absolutely! Contact us to schedule a personalized demo of CodeFundr&apos;s features.</p>
+                </div>
+                
+                <div>
+                  <h4 className="text-white font-semibold mb-2">What about partnerships?</h4>
+                  <p className="text-cyan-300/80 text-sm">We&apos;re always open to collaboration opportunities with educational institutions and tech companies.</p>
+                </div>
               </div>
-              
-              <div className="mt-6 pt-6 border-t border-cyan-700/20">
-                <p className="text-cyan-400/70 text-sm text-center">
-                  Need more help? Check out our{' '}
-                  <a href="#" className="text-cyan-300 hover:text-white transition-colors underline">
-                    Help Center
-                  </a>
-                </p>
-              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="mt-20 text-center" data-aos="fade-up">
+          <div className="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border border-cyan-700/30 rounded-2xl p-12 shadow-[0_0_40px_rgba(0,255,255,0.1)]">
+            <h2 className="text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
+            <p className="text-xl text-cyan-300 mb-8 max-w-2xl mx-auto">
+              Join thousands of creators already building amazing projects with CodeFundr
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/auth/signup"
+                className="px-8 py-4 rounded-lg font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-700 text-white shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:brightness-110 transition-all hover:scale-105"
+              >
+                Start Creating
+              </Link>
+              <Link 
+                href="/features"
+                className="px-8 py-4 rounded-lg font-bold border border-cyan-500 text-cyan-300 hover:bg-cyan-500/10 transition-all hover:scale-105"
+              >
+                Learn More
+              </Link>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Bottom CTA */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6" data-aos="fade-up">
-            Ready to Join the <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600">Creator Economy</span>?
-          </h2>
-          <p className="text-xl text-cyan-300 mb-8" data-aos="fade-up" data-aos-delay="200">
-            Start building your community and receiving support for your creative work today
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
-            <a 
-              href="/login" 
-              className="px-8 py-4 rounded-full font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-700 text-white shadow-[0_0_20px_rgba(0,255,255,0.5)] hover:brightness-110 transition-all hover:scale-105"
-            >
-              Get Started Free
-            </a>
-            <a 
-              href="/about" 
-              className="px-8 py-4 rounded-full font-bold border-2 border-cyan-500 text-cyan-300 hover:bg-cyan-500 hover:text-black transition-all hover:scale-105"
-            >
-              Learn More
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
